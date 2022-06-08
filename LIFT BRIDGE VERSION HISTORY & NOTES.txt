@@ -94,24 +94,42 @@ V6: DELTA
     For public web upload.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-CURRENT RELEASE VERSION:
-  GAMMA-2:
-    V4.F
+[CURRENT VERSIONS]
+  CURRENT RELEASE VERSION:
+    GAMMA-2:
+      V4.F
 
-CURRENT DEV VERSION:
-  GAMMA-2: 
-    V4.G
+  CURRENT DEV VERSION:
+    GAMMA-2: 
+      V4.G
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [NOTES]
-Logic tree IS FINALIZED, GAMMA-2 is in final stages.
-GAMMA-3 is queued for development.
+  GAMMA-1 is CANCELLED.
+  Logic tree IS FINALIZED, GAMMA-2 is in final stages.
+  BuildTest-1 is completed and resulted in failure.
+  Fail diagnosed by JUN8, build test 2 scheduled for same date.
+  GAMMA-3 is queued for development.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Forecast:
-  GAMMA-2 completed after full assembly.
+[FORECAST]
+  GAMMA-2 to be completed after full assembly.
   GAMMA-3 to be developed after GAMMA-2 completion, possibly cancelled.
-  Finishing circuitry (monday MAY30).
-  Assembly on tight schedule (JUNE1).
-  GAMMA-1 cancelled (~~~).
+  Finishing circuitry (JUN8).
+  Assembly on tight schedule (JUN11).
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[BUILD PROGRESS NOTES]
+  JUN4:
+    Circuit soldering finished. 9V power system pending.
+  JUN6:
+    Progressed with component seating for leafA.
+  JUN7: 
+    LeafA components connected and tested in BuildTest-1.
+    Test resulted in failure with motors and servos.
+    Diagnosed missing connections for servos,
+    diagnostics for motor problem scheduled for JUN8.
+    BuildTest-2 scheduled for same date.
+  JUN8:
+    Progress delayed.
+
 
   
 
