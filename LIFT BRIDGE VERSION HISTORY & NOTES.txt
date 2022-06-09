@@ -119,8 +119,11 @@ V6: DELTA
 [BUILD PROGRESS NOTES]
   JUN4:
     Circuit soldering finished. 9V power system pending.
+  JUN5:
+    Troubleshooted 9V power problems and cable placement.
+    Build On Hold for the day.
   JUN6:
-    Progressed with component seating for leafA.
+    Advanced with component seating for leafA.
   JUN7: 
     LeafA components connected and tested in BuildTest-1.
     Test resulted in failure with motors and servos.
@@ -129,6 +132,13 @@ V6: DELTA
     BuildTest-2 scheduled for same date.
   JUN8:
     Progress delayed.
+  JUN9:
+    Fixed motor problem, swapped faulty motor driver.
+    Motor driver failed after motor current overdraw.
+    BuildTest-2 completed, fixed pin assignment errors in code.
+    Sucessfully completed BuildTest-3 with total of 5 lift/release cycles.
+    Up next: Change motor driver position, place surface components.
+  JUN10:
 
 
   
