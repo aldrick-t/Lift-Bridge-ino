@@ -37,9 +37,9 @@ const int irSens_river1 = 36;
 const int irSens_river2 = 37;
 
 const int limSwitchA_down = 42;
-const int limSwitchA_up = 43; 
+const int limSwitchA_up = 39; 
 const int limSwitchB_down = 44; 
-const int limSwitchB_up = 45; 
+const int limSwitchB_up = 41; 
 
 
 int irsens1_status;
@@ -103,11 +103,11 @@ void setup(){
 }
 
 void bridgeOpen(){
-  analogWrite(motorA_speed, 180);
+  analogWrite(motorA_speed, 200);
   digitalWrite(motorA_open, HIGH);
   digitalWrite(motorA_close, LOW);
 
-  analogWrite(motorB_speed, 180);
+  analogWrite(motorB_speed, 200);
   digitalWrite(motorB_open, HIGH);
   digitalWrite(motorB_close, LOW);
 }
@@ -121,11 +121,11 @@ void bridgeIdle(){
 }
 
 void bridgeClose(){
-  analogWrite(motorA_speed, 70);
+  analogWrite(motorA_speed, 120);
   digitalWrite(motorA_close, HIGH);
   digitalWrite(motorA_open, LOW);
 
-  analogWrite(motorB_speed, 70);
+  analogWrite(motorB_speed, 120);
   digitalWrite(motorB_close, HIGH);
   digitalWrite(motorB_open, LOW);  
 }
