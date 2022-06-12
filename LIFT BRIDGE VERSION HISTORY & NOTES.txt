@@ -39,6 +39,8 @@ V2: BETA
 V3: GAMMA-1
   FULLY AUTOMATIC system, using sensors for both traffic entry/exit.
   Clean program, optimized version after V2 (beta) development stage.
+
+  --CANCELLED--
   
 
 V4: GAMMA-2
@@ -75,11 +77,19 @@ V4: GAMMA-2
     Adds semaphore system for road and river traffic.
   V4.G:
     Adapts program for both bridge halves.
-    Should achieve absolute functionality.
+    Minor changes with time definitions and sensor conditions.
+    LeafB limit switches are are kept offline.
+    Both halves work when physically synced, program does NOT ensure lift sync.
+  V4-GAMMA2:
+    V4.G is now release version GAMMA-2. 
+    Reached point of sufficient functionality, development for V4 is now closed.
+    To be sent to [V6: DELTA] for optimization.
 
 V5: GAMMA-3
   HYBRID system, using IR remote to trigger bridge lift-->close cycle.
   Automatic bridge close with exit sensors, allows for 1-way traffic only.
+
+  --CANCELLED--
 
 V6: DELTA
   Final Programs.
@@ -97,24 +107,19 @@ V6: DELTA
 [CURRENT VERSIONS]
   CURRENT RELEASE VERSION:
     GAMMA-2:
-      V4.F
+      V4.G
 
   CURRENT DEV VERSION:
-    GAMMA-2: 
-      V4.G
+    null
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [NOTES]
-  GAMMA-1 is CANCELLED.
-  Logic tree IS FINALIZED, GAMMA-2 is in final stages.
-  BuildTest-1 is completed and resulted in failure.
-  Fail diagnosed by JUN8, build test 2 scheduled for same date.
-  GAMMA-3 is queued for development.
+  GAMMA-1 CANCELLED.
+  GAMMA-2 FINISHED.
+  GAMMA-3 CANCELLED.
+  GAMMA-2 sent to DELTA for final release.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [FORECAST]
-  GAMMA-2 to be completed after full assembly.
-  GAMMA-3 to be developed after GAMMA-2 completion, possibly cancelled.
-  Finishing circuitry (JUN8).
-  Assembly on tight schedule (JUN11).
+  99% finished. Pending: river walls.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [BUILD PROGRESS NOTES]
   JUN4:
@@ -139,10 +144,17 @@ V6: DELTA
     Sucessfully completed BuildTest-3 with total of 5 lift/release cycles.
     Up next: Change motor driver position, place surface components.
   JUN10:
-
-
-  
-
-
-
-
+    LeafA mostly completed. Semaphore pending.
+  JUN11:
+    Both bridge halves finished. cable management, syncing and traffic lights pending.
+  JUN12:
+    Synced bridge lifting, traffic lights placed, cables managed.
+    Code fixed for proper sensor function.
+    Thoroughly tested lift cycles, sensor functionality and motor sync.
+    Adjusted all issues, leave still until JUN14 for final maintenance.
+    River walls pending.
+  JUN14:
+    Take to presentation.
+    --END--
+    
+    
