@@ -1,6 +1,7 @@
 /*
   Lift Bridge Control System
   DELTA-A (GAMMA-2)
+  Arduino ver.
   Built for Arduino MEGA 2560
   JUN 2022
 */
@@ -10,7 +11,7 @@
 #include <Chrono.h>
 #include <IRremote.h>
 
-#define closeSpeed 100
+#define closeSpeed 120
 #define openSpeed 200
 
 const int motorA_speed = 2;
@@ -173,6 +174,8 @@ void roadTraffic_green(){
 }
 
 void trafficReset(){
+  inputRead();
+  remoteRecieve();
   if(irsens1_status == 1 || irsens2_status == 1){
     carTime.restart();
   }
@@ -191,41 +194,22 @@ void inputRead(){
 
 void remoteRecieve(){
   remoteIn = (IrReceiver.decodedIRData.decodedRawData);
-  if (IrReceiver.decode()) {
-      Serial.println(remoteIn);
+  if (IrReceiver.decode()){
       IrReceiver.resume();
   }
-}
-
-void riverTraffic_red(){
-  digitalWrite(boatRED, HIGH);
-  digitalWrite(boatYELLOW, LOW);
-  digitalWrite(boatGREEN, LOW);
-}
-
-void riverTraffic_yellow(){
-  digitalWrite(boatRED, LOW);
-  digitalWrite(boatYELLOW, HIGH);
-  digitalWrite(boatGREEN, LOW);
-}
-
-void riverTraffic_green(){
-  digitalWrite(boatRED, LOW);
-  digitalWrite(boatYELLOW, LOW);
-  digitalWrite(boatGREEN, HIGH);
 }
 
 void loop(){
   return_loc:
   inputRead();
-  if(leafA_downState == 1 && closedTime.hasPassed(3000)){
+  if((leafA_downState == 1 && leafB_downState == 1) && closedTime.hasPassed(3000)){
     closedTime.stop();
     boomGate.write(0);
     stopLight_off();
     roadTraffic_green();
 
   }
-  else if(leafA_downState == 0){
+  else if(leafA_downState == 0 || leafB_downState == 0){
     closedTime.restart();
     boomGate.write(90);
     stopLight_hold();
@@ -239,7 +223,6 @@ void loop(){
   if(remoteIn == 244){
     carTime.restart();
     lightTime.restart();
-    riverTraffic_yellow();
     while(lightTime.elapsed() < 5000){
       stopLight_blink();
       trafficReset();
@@ -248,16 +231,12 @@ void loop(){
       }
     }
     while(lightTime.hasPassed(4500)){
-
       lightTime.stop();
-
       boomGate.write(90);
-
       stopLight_hold();
-
       trafficReset();
       inputRead();
-      while((irsens1_status == 0 && irsens2_status == 0) && (carTime.hasPassed(10000))){
+      while((irsens1_status == 0 && irsens2_status == 0) && (carTime.hasPassed(15000))){
         inputRead();
         carTime.stop();
         liftStatus = 1;
@@ -276,7 +255,6 @@ void loop(){
           remoteRecieve();
           inputRead();
           bridgeIdle();
-          riverTraffic_green();
           if(remoteIn == 245){
             liftStatus = 2;
             break;
@@ -284,7 +262,6 @@ void loop(){
         }
         remoteRecieve();
         while(remoteIn == 245 && liftStatus == 2){
-          riverTraffic_red();
           do{
             inputRead();
             bridgeClose();
@@ -304,7 +281,6 @@ void loop(){
           bridgeIdle();
           closedTime.restart();
           remoteIn = 0;
-          riverTraffic_red();
           roadTraffic_yellow();
           goto return_loc;
         }
@@ -312,4 +288,3 @@ void loop(){
     }      
   }
 }
-
