@@ -80,8 +80,10 @@ V4: GAMMA-2
     Minor changes with time definitions and sensor conditions.
     LeafB limit switches are are kept offline.
     Both halves work when physically synced, program does NOT ensure lift sync.
+  V4.H:
+    Created after team review, changes with certain conditions to fix problems with LeafB.
   V4-GAMMA2:
-    V4.G is now release version GAMMA-2. 
+    V4.H is now release version GAMMA-2. 
     Reached point of sufficient functionality, development for V4 is now closed.
     To be sent to [V6: DELTA] for optimization.
 
@@ -102,12 +104,15 @@ V6: DELTA
   V6.C: 
     Publish versions.
     For public web upload.
+  V6.D:
+    Explained versions.
+    For comprehensive review.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [CURRENT VERSIONS]
   CURRENT RELEASE VERSION:
     GAMMA-2:
-      V4.G
+      V4.H
 
   CURRENT DEV VERSION:
     null
@@ -119,7 +124,7 @@ V6: DELTA
   GAMMA-2 sent to DELTA for final release.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [FORECAST]
-  99% finished. Pending: river walls.
+  100% finished. Pending final test at T-5hr from presentation.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [BUILD PROGRESS NOTES]
   JUN4:
@@ -153,8 +158,9 @@ V6: DELTA
     Thoroughly tested lift cycles, sensor functionality and motor sync.
     Adjusted all issues, leave still until JUN14 for final maintenance.
     River walls pending.
+  JUN13:
+    Modified river walls.
   JUN14:
+    Final test prior to presentation, sync motors if required.
     Take to presentation.
     --END--
-    
-    
